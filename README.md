@@ -58,3 +58,24 @@ Check Nginx Log:
 Nginx Access Log:
 
     Nov 26 21:21:41 TOKEN f2ad6876ca82 kibana-nginx-accesslog:172.17.42.1 - - [26/Nov/2015:21:20:43 +0800] "GET / HTTP/1.1" 200 3700 "-" "curl/7.29.0" "-"
+
+Refer
+===
+
+Running Syslog Within a Docker Container
+ - http://www.projectatomic.io/blog/2014/09/running-syslog-within-a-docker-container/
+
+How To Run Rsyslog in a Docker Container for Logging
+ - https://blog.logentries.com/2014/03/how-to-run-rsyslog-in-a-docker-container-for-logging/
+
+How to manager Docker log?
+ - http://www.dockone.io/question/584
+
+Logging Docker Container Output to journald
+ - http://www.projectatomic.io/blog/2015/04/logging-docker-container-output-to-journald/
+
+Rsyslog Deployment
+ - http://my.oschina.net/duxuefeng/blog/317570
+
+Rsyslog collecting Nginx Access log, which using Logstash as Shipper
+ - http://www.tuicool.com/articles/V7jyq2e
