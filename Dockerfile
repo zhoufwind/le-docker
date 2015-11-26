@@ -9,9 +9,12 @@ RUN echo Asia/Shanghai > /etc/timezone
 RUN mkdir -p /root/.ssh
 COPY authorized_keys /root/.ssh/authorized_keys
 
+COPY epel-release-latest-7.noarch.rpm /usr/local/src/epel-release-latest-7.noarch.rpm
+RUN rpm -ivh /usr/local/src/epel-release-latest-7.noarch.rpm
 RUN yum update -y
-RUN yum -y install rsyslog
+RUN yum -y install rsyslog nginx
 RUN yum clean all
+
 RUN sed -ri 's/\$ModLoad imjournal/\#\$ModLoad imjournal/g' /etc/rsyslog.conf
 RUN sed -ri 's/\$OmitLocalLogging on/\$OmitLocalLogging off/g' /etc/rsyslog.conf
 RUN sed -ri 's/\$IMJournalStateFile imjournal.state/\#\$IMJournalStateFile imjournal.state/g' /etc/rsyslog.conf
@@ -22,4 +25,4 @@ COPY run.sh /run.sh
 RUN chmod 755 /run.sh
 ENTRYPOINT /run.sh
 
-EXPOSE 22
+EXPOSE 22 80
